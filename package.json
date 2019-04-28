@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/claudiosanches/woocommerce-correios"
   },
+  "scripts": {
+    "build": "./node_modules/.bin/grunt"
+  },
   "main": "Gruntfile.js",
   "devDependencies": {
     "grunt": "^1.0.1",

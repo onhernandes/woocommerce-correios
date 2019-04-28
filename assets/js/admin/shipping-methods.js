@@ -1,4 +1,5 @@
 jQuery( function( $ ) {
+  console.log('abc');
 	$( 'input[id$="_show_delivery_time"], #woocommerce_correios_display_date' ).on( 'change', function() {
 		var field = $( 'input[id$="_additional_time"]' ).closest( 'tr' );
 
@@ -21,4 +22,44 @@ jQuery( function( $ ) {
 			password.hide();
 		}
 	}).change();
+
+  $('select[name$="_registry_type"]').on('change', function (e) {
+    toggleOptionalService(e.target);
+  });
+
+  toggleOptionalService($('select[name$="_registry_type"]').first());
+
+  function toggleOptionalService (select) {
+    var select = $(select);
+    var receiptClass = '.receipt-notice';
+    var title = $('.optional-services');
+    var table = $(receiptClass)
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .parent();
+
+    table = $(table);
+
+    var match = select.attr('id').match(/impresso/gi);
+    if (match && match.length && select.val().length === 0) {
+      table.hide();
+      title.hide();
+      title.next().hide();
+
+      if ($(receiptClass).val() != 0) {
+        $(receiptClass).click();
+      }
+
+      if ($('.own-hands').val() != 0) {
+        $('.own-hands').click();
+      }
+    } else {
+      table.show();
+      title.show();
+      title.next().show();
+    }
+  }
 });

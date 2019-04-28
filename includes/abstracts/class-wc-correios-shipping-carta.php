@@ -139,6 +139,7 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 				'type'        => 'title',
 				'description' => __( 'Use these options to add the value of each service provided by the Correios.', 'woocommerce-correios' ),
 				'default'     => '',
+				'class'       => 'optional-services',
 			),
 			'receipt_notice' => array(
 				'title'       => __( 'Receipt Notice', 'woocommerce-correios' ),
@@ -147,6 +148,7 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 				'description' => __( 'This controls whether to add costs of the receipt notice service.', 'woocommerce-correios' ),
 				'desc_tip'    => true,
 				'default'     => 'no',
+				'class'       => 'receipt-notice',
 			),
 			'own_hands' => array(
 				'title'       => __( 'Own Hands', 'woocommerce-correios' ),
@@ -155,6 +157,7 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 				'description' => __( 'This controls whether to add costs of the own hands service', 'woocommerce-correios' ),
 				'desc_tip'    => true,
 				'default'     => 'no',
+				'class'       => 'own-hands',
 			),
 			'testing' => array(
 				'title'   => __( 'Testing', 'woocommerce-correios' ),
