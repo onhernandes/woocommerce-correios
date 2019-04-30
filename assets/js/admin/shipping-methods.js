@@ -49,11 +49,14 @@ jQuery( function( $ ) {
       title.hide();
       title.next().hide();
 
-      if ($(receiptClass).val() != 0) {
+      if ($(receiptClass).is(':checked')) {
+        console.log($(receiptClass).val());
+        console.log(typeof $(receiptClass).val());
+        console.log(0 != $(receiptClass).val());
         $(receiptClass).click();
       }
 
-      if ($('.own-hands').val() != 0) {
+      if ($('.own-hands').is(':checked')) {
         $('.own-hands').click();
       }
     } else {
